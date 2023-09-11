@@ -5,10 +5,7 @@ import img from "./images/test.jpeg";
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header
-                className="App-header"
-                style={{ backgroundColor: "blackwhite" }}
-            >
+            <header className="App-header">
                 UM COS420 with React Hooks and TypeScript
             </header>
             <p>
