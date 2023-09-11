@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import img from "./images/test.jpeg";
 function App(): JSX.Element {
     return (
         <div className="App">
@@ -15,23 +16,25 @@ function App(): JSX.Element {
                 automatically reload. Gabe Russell
             </p>
             <h1>Hello World</h1>
-            <img src="test.jpeg" alt="A software engineer" />;
+            <img src={img} alt="a software engineer" />
             <ul>
+                Unordered List
                 <li>Basketball</li>
                 <li>Football</li>
                 <li>Baseball</li>
             </ul>
-            <Button onClick={() => console.log("Hello World")}>
+            <Button onClick={() => console.log("Hello World!")}>
                 Log Hello World
             </Button>
+            <p></p>
             <Container>
                 <Row>
                     <Col>
                         <div
                             style={{
-                                height: "30",
-                                width: "10",
-                                backgroundColor: "blue"
+                                height: "100",
+                                width: "60",
+                                backgroundColor: "orange"
                             }}
                         >
                             First Column
@@ -40,9 +43,9 @@ function App(): JSX.Element {
                     <Col>
                         <div
                             style={{
-                                height: "30",
-                                width: "10",
-                                backgroundColor: "blue"
+                                height: "100",
+                                width: "60",
+                                backgroundColor: "orange"
                             }}
                         >
                             Second Column
