@@ -113,6 +113,7 @@ export function makeMath(addends: number[]): string {
  * For instance, the array [1, 9, -5, 7] would become [1, 9, -5, 10, 7]
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
+//re committing
 export function injectPositive(values: number[]): number[] {
     let sum = 0;
     let testneg = false;
