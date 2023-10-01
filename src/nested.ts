@@ -111,7 +111,13 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    let csvfile = "id,name,options,points,published";
+    for (const question of questions) {
+        csvfile += "\n";
+        const numoptions = question.options ? question.options.length : 0;
+        csvfile += `${question.id},${question.name},${numoptions},${question.points},${question.published}`;
+    }
+    return csvfile;
 }
 
 /**
