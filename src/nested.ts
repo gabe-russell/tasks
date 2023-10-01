@@ -35,6 +35,14 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
+    const copyqs = questions.map(
+        (question: Question): Question => ({ ...question })
+    );
+    for (const question of copyqs) {
+        if (question.id === id) {
+            return question;
+        }
+    }
     return null;
 }
 
