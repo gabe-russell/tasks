@@ -232,7 +232,18 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const changequestions = questions.map((question: Question) => ({
+        ...question
+    }));
+    for (const question of changequestions) {
+        if (question.id === targetId) {
+            question.type = newQuestionType;
+            if (newQuestionType === "short_answer_question") {
+                question.options = [];
+            }
+        }
+    }
+    return changequestions;
 }
 
 /**
