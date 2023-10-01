@@ -262,7 +262,22 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const editquestions = questions.map((question: Question) => ({
+        ...question,
+        options: [...question.options]
+    }));
+    for (const question of editquestions) {
+        if (question.id === targetId) {
+            if (targetOptionIndex === -1) {
+                question.options.push(newOption);
+            } else if (question.options.length === 0) {
+                question.options.push(newOption);
+            } else {
+                question.options[targetOptionIndex] = newOption;
+            }
+        }
+    }
+    return editquestions;
 }
 
 /***
