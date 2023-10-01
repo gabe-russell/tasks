@@ -159,7 +159,16 @@ export function publishAll(questions: Question[]): Question[] {
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
-    return false;
+    if (questions.length === 0) {
+        return true;
+    }
+    const firstQuestionType = questions[0].type;
+    for (let i = 1; i < questions.length; i++) {
+        if (questions[i].type !== firstQuestionType) {
+            return false;
+        }
+    }
+    return true;
 }
 
 /***
@@ -173,7 +182,21 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    return [];
+    const blankq = {
+        id: id,
+        name: name,
+        type: type,
+        body: "",
+        expected: "",
+        options: [],
+        points: 1,
+        published: false
+    };
+    const newquestions = questions.map((question: Question) => ({
+        ...question
+    }));
+    newquestions.push(blankq);
+    return newquestions;
 }
 
 /***
