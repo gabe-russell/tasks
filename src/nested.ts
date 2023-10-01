@@ -126,7 +126,18 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    return [];
+    const newanswers = [];
+    let answer: Answer;
+    for (const question of questions) {
+        answer = {
+            questionId: question.id,
+            text: "",
+            submitted: false,
+            correct: false
+        };
+        newanswers.push(answer);
+    }
+    return newanswers;
 }
 
 /***
