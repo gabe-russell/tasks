@@ -291,5 +291,26 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    function duplicateQuestion(id: number, oldQuestion: Question): Question {
+        const newname = "Copy of " + oldQuestion.name;
+        const copyquestion = {
+            ...oldQuestion,
+            id: id,
+            name: newname,
+            published: false
+        };
+        return copyquestion;
+    }
+    const newArray = [];
+
+    for (const question of questions) {
+        newArray.push(question);
+
+        if (question.id === targetId) {
+            const duplicatedQuestion = duplicateQuestion(newId, question);
+            newArray.push(duplicatedQuestion);
+        }
+    }
+
+    return newArray;
 }
