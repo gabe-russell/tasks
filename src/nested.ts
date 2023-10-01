@@ -60,7 +60,13 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * questions, as an array.
  */
 export function getNames(questions: Question[]): string[] {
-    return [];
+    const newnames = [];
+    for (const question of questions) {
+        if (question && question.name) {
+            newnames.push(question.name);
+        }
+    }
+    return newnames;
 }
 
 /***
