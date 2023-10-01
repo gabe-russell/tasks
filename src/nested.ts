@@ -209,7 +209,15 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const samequestions = questions.map((question: Question) => ({
+        ...question
+    }));
+    for (const question of samequestions) {
+        if (question.id === targetId) {
+            question.name = newName;
+        }
+    }
+    return samequestions;
 }
 
 /***
