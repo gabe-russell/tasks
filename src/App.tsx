@@ -13,6 +13,7 @@ function App(): JSX.Element {
             <header className="App-header">
                 UM COS420 with React Hooks and TypeScript
             </header>
+            <p>Some info</p>
             <hr></hr>
             <Counter></Counter>
             <hr />
